@@ -61,6 +61,8 @@ flutter:
   assets:
    - assets/images/map/  
    - assets/images/player/knight/
+   - assets/images/enemy/goblin/
+   - assets/images/enemy/slime/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

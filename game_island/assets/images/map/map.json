@@ -225,9 +225,53 @@
          "width":45,
          "x":0,
          "y":0
+        }, 
+        {
+         "draworder":"topdown",
+         "id":5,
+         "name":"enemy",
+         "objects":[
+                {
+                 "class":"",
+                 "height":16,
+                 "id":1,
+                 "name":"slime",
+                 "rotation":0,
+                 "visible":true,
+                 "width":16,
+                 "x":114,
+                 "y":494
+                }, 
+                {
+                 "class":"",
+                 "height":16,
+                 "id":2,
+                 "name":"slime",
+                 "rotation":0,
+                 "visible":true,
+                 "width":16,
+                 "x":372,
+                 "y":426.666666666667
+                }, 
+                {
+                 "class":"",
+                 "height":16,
+                 "id":3,
+                 "name":"slime",
+                 "rotation":0,
+                 "visible":true,
+                 "width":16,
+                 "x":419.333333333333,
+                 "y":570
+                }],
+         "opacity":1,
+         "type":"objectgroup",
+         "visible":true,
+         "x":0,
+         "y":0
         }],
- "nextlayerid":5,
- "nextobjectid":1,
+ "nextlayerid":6,
+ "nextobjectid":4,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.9.0",
