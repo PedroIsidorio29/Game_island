@@ -1,12 +1,11 @@
 import 'dart:ui';
-
-import 'package:bonfire/bonfire.dart';
-
 import 'sprite_slime.dart';
+import 'package:bonfire/bonfire.dart';
 
 class Slime extends SimpleEnemy with ObjectCollision {
   Slime(Vector2 position)
       : super(
+          life: 100,
           position: position,
           size: Vector2(14, 14),
           speed: 100,
@@ -25,13 +24,19 @@ class Slime extends SimpleEnemy with ObjectCollision {
       ),
     );
   }
+
+  
   @override
   void update(double dt) {
+    // Seguir o player
     seeAndMoveToPlayer(closePlayer: (player) {}, radiusVision: 40);
-simpleAttackMelee(damage: 3, size: size);
+
+    // Atacar o player
+    simpleAttackMelee(damage: 3, size: size);
     super.update(dt);
   }
 
+  // renderização da barra de vida
   @override
   void render(Canvas canvas) {
     drawDefaultLifeBar(
@@ -44,6 +49,7 @@ simpleAttackMelee(damage: 3, size: size);
     super.render(canvas);
   }
 
+  // desaparecimento apos a morte
   @override
   void die() {
     removeFromParent();

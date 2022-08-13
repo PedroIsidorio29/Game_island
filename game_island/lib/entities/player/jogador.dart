@@ -1,10 +1,11 @@
 import 'dart:ui';
-import 'package:bonfire/bonfire.dart';
 import 'sprite_jogador.dart';
+import 'package:bonfire/bonfire.dart';
 
 class Jogador extends SimplePlayer with ObjectCollision {
   Jogador(Vector2 position)
       : super(
+            life: 150,
             position: position,
             size: Vector2(16, 16),
             speed: 150,
@@ -23,6 +24,7 @@ class Jogador extends SimplePlayer with ObjectCollision {
     );
   }
 
+  // Ação ao bater no inimigo
   @override
   void joystickAction(JoystickActionEvent event) {
     if (event.event == ActionEvent.DOWN && event.id == 1) {
@@ -30,7 +32,9 @@ class Jogador extends SimplePlayer with ObjectCollision {
     }
     super.joystickAction(event);
   }
- @override
+
+  // renderização da barra de vida
+  @override
   void render(Canvas canvas) {
     drawDefaultLifeBar(
       canvas,
@@ -41,17 +45,11 @@ class Jogador extends SimplePlayer with ObjectCollision {
     );
     super.render(canvas);
   }
-// @override
-//   void update(double dt) {
 
-//     super.update(dt);
-//   }
-
-// @override
-//   bool onCollision(GameComponent component, bool active) {
-//     print(component);
-//     print(active);
-//     return super.onCollision(component, active);
-//   }
-
+  // desaparecimento apos a morte
+  @override
+  void die() {
+    removeFromParent();
+    super.die();
+  }
 }

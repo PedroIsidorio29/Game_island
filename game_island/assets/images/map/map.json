@@ -221,7 +221,7 @@
          "name":"detail",
          "opacity":1,
          "type":"tilelayer",
-         "visible":false,
+         "visible":true,
          "width":45,
          "x":0,
          "y":0
@@ -239,8 +239,8 @@
                  "rotation":0,
                  "visible":true,
                  "width":16,
-                 "x":224.125,
-                 "y":368.0625
+                 "x":224,
+                 "y":368
                 }, 
                 {
                  "class":"",
@@ -250,7 +250,7 @@
                  "rotation":0,
                  "visible":true,
                  "width":16,
-                 "x":416.020833333333,
+                 "x":416,
                  "y":448
                 }, 
                 {
@@ -261,8 +261,8 @@
                  "rotation":0,
                  "visible":true,
                  "width":16,
-                 "x":384.083333333333,
-                 "y":608.041666666667
+                 "x":384,
+                 "y":608
                 }, 
                 {
                  "class":"",
@@ -272,8 +272,8 @@
                  "rotation":0,
                  "visible":true,
                  "width":16,
-                 "x":320.30303030303,
-                 "y":336.181818181818
+                 "x":320,
+                 "y":336
                 }, 
                 {
                  "class":"",
@@ -283,8 +283,8 @@
                  "rotation":0,
                  "visible":true,
                  "width":16,
-                 "x":623.916666666667,
-                 "y":352.5
+                 "x":624,
+                 "y":352
                 }, 
                 {
                  "class":"",

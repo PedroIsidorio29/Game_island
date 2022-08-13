@@ -1,8 +1,7 @@
+import 'entities/slime/slime.dart';
+import 'entities/player/jogador.dart';
 import 'package:bonfire/bonfire.dart';
 import 'package:flutter/material.dart';
-
-import 'entities/player/jogador.dart';
-import 'entities/slime/slime.dart';
 
 void main() {
   runApp(const MyGame());
@@ -29,13 +28,12 @@ class GameInit extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var screenSize = MediaQuery.of(context).size;
     return BonfireTiledWidget(
       map: TiledWorldMap("map/map.json", objectsBuilder: {
         'slime': (properties) => Slime(properties.position)
       }),
-      player: Jogador(
-        Vector2(3 * size, 4 * size),
-      ),
+      player: Jogador(Vector2(3 * size, 4 * size)),
       cameraConfig: CameraConfig(moveOnlyMapArea: true, zoom: 2.5),
       joystick: Joystick(
           directional: JoystickDirectional(),
@@ -43,10 +41,15 @@ class GameInit extends StatelessWidget {
               keyboardDirectionalType: KeyboardDirectionalType.wasdAndArrows),
           actions: [
             JoystickAction(
-              actionId: 1,color: Color.fromARGB(255, 170, 47, 47),
+              actionId: 1,
+              color: Color.fromARGB(255, 235, 118, 118),
+              margin: EdgeInsets.only(
+                bottom: screenSize.height * 0.1,
+                right: screenSize.width * 0.1,
+              ),
             )
           ]),
-          showCollisionArea: true,
+      showCollisionArea: true,
     );
   }
 }
