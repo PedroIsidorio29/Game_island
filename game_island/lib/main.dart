@@ -1,8 +1,8 @@
 import 'package:bonfire/bonfire.dart';
-import 'package:bonfire/tiled/model/tiled_object_properties.dart';
 import 'package:flutter/material.dart';
-import 'package:game_island/jogador.dart';
-import 'package:game_island/slime.dart';
+
+import 'entities/player/jogador.dart';
+import 'entities/slime/slime.dart';
 
 void main() {
   runApp(const MyGame());
@@ -30,18 +30,23 @@ class GameInit extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BonfireTiledWidget(
-      map: TiledWorldMap("map/map.json",objectsBuilder: {
-        'slime':(properties)=>Slime(properties.position)
+      map: TiledWorldMap("map/map.json", objectsBuilder: {
+        'slime': (properties) => Slime(properties.position)
       }),
       player: Jogador(
         Vector2(3 * size, 4 * size),
       ),
       cameraConfig: CameraConfig(moveOnlyMapArea: true, zoom: 2.5),
       joystick: Joystick(
-        directional: JoystickDirectional(),
-        keyboardConfig: KeyboardConfig(
-            keyboardDirectionalType: KeyboardDirectionalType.wasdAndArrows),
-      ),components: [],
+          directional: JoystickDirectional(),
+          keyboardConfig: KeyboardConfig(
+              keyboardDirectionalType: KeyboardDirectionalType.wasdAndArrows),
+          actions: [
+            JoystickAction(
+              actionId: 1,color: Color.fromARGB(255, 170, 47, 47),
+            )
+          ]),
+          showCollisionArea: true,
     );
   }
 }
