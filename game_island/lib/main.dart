@@ -1,9 +1,12 @@
 import 'package:bonfire/bonfire.dart';
 import 'package:flutter/material.dart';
+import 'package:game_island/jogador.dart';
 
 void main() {
   runApp(const MyGame());
 }
+
+const double size = 16;
 
 class MyGame extends StatelessWidget {
   const MyGame({Key? key}) : super(key: key);
@@ -26,7 +29,14 @@ class GameInit extends StatelessWidget {
   Widget build(BuildContext context) {
     return BonfireTiledWidget(
       map: TiledWorldMap("map/map.json"),
-      showCollisionArea: true,
+      player: Jogador(
+        Vector2(3 * size, 4 * size),
+      ),
+      cameraConfig: CameraConfig(moveOnlyMapArea: true, zoom: 2.5),
+      joystick: Joystick(
+        keyboardConfig: KeyboardConfig(
+            keyboardDirectionalType: KeyboardDirectionalType.wasdAndArrows),
+      ),
     );
   }
 }
