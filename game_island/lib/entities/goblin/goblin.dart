@@ -32,7 +32,7 @@ class Goblin extends SimpleEnemy with ObjectCollision, AutomaticRandomMovement {
     // Atacar o player
     simpleAttackMelee(damage: 20, size: size);
 
-    runRandomMovement(dt, speed: 50, maxDistance: 300);
+    runRandomMovement(dt, speed: 50, maxDistance: 200);
     super.update(dt);
   }
 

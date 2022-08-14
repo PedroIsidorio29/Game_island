@@ -66,7 +66,7 @@ lightingColorGame:Color.fromARGB(69, 0, 0, 0),
           actions: [
             JoystickAction(
               actionId: 1,
-              color: Color.fromARGB(255, 235, 118, 118),
+              color:const Color.fromARGB(255, 235, 118, 118),
               margin: EdgeInsets.only(
                 bottom: screenSize.height * 0.1,
                 right: screenSize.width * 0.1,
