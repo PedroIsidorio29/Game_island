@@ -1,7 +1,12 @@
+import 'package:game_island/entities/gizela/gizela.dart';
+
+import 'entities/goblin/goblin.dart';
 import 'entities/slime/slime.dart';
 import 'entities/player/jogador.dart';
 import 'package:bonfire/bonfire.dart';
 import 'package:flutter/material.dart';
+
+import 'itens/fogueira.dart';
 
 void main() {
   runApp(const MyGame());
@@ -30,11 +35,30 @@ class GameInit extends StatelessWidget {
   Widget build(BuildContext context) {
     var screenSize = MediaQuery.of(context).size;
     return BonfireTiledWidget(
-      map: TiledWorldMap("map/map.json", objectsBuilder: {
-        'slime': (properties) => Slime(properties.position)
-      }),
+
+
+      map: TiledWorldMap(
+        "map/map.json",
+        objectsBuilder: {
+          'slime': (properties) => Slime(properties.position),
+          'goblin': (properties) => Goblin(properties.position),
+          'gizela': (properties) => Gizela(properties.position),
+          'fogueira': (properties) => Fogueira(properties.position),
+          
+        },
+      ),
+
+
       player: Jogador(Vector2(3 * size, 4 * size)),
-      cameraConfig: CameraConfig(moveOnlyMapArea: true, zoom: 2.5),
+
+lightingColorGame:Color.fromARGB(69, 0, 0, 0),
+      cameraConfig: CameraConfig(
+          moveOnlyMapArea: true,
+          zoom: 1,
+          smoothCameraEnabled: true,
+          sizeMovementWindow: Vector2(size * 3, size * 3)),
+
+
       joystick: Joystick(
           directional: JoystickDirectional(),
           keyboardConfig: KeyboardConfig(
@@ -49,7 +73,7 @@ class GameInit extends StatelessWidget {
               ),
             )
           ]),
-      showCollisionArea: true,
+
     );
   }
 }

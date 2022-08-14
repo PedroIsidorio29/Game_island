@@ -1,22 +1,18 @@
-// ignore_for_file: unnecessary_this
-
 import 'dart:ui';
-
 import 'package:bonfire/bonfire.dart';
-import 'sprite_slime.dart';
+import 'package:game_island/entities/goblin/sprite_goblin.dart';
 
-class Slime extends SimpleEnemy with ObjectCollision, AutomaticRandomMovement {
-  Slime(Vector2 position)
+class Goblin extends SimpleEnemy with ObjectCollision, AutomaticRandomMovement {
+  Goblin(Vector2 position)
       : super(
-          life: 100,
+          life: 200,
           position: position,
           size: Vector2(14, 14),
-          speed: 100,
           animation: SimpleDirectionAnimation(
-            idleRight: SpriteSlime.slimeStaticoRight,
-            runRight: SpriteSlime.slimeRunRight,
-            idleLeft: SpriteSlime.slimeStaticoLeft,
-            runLeft: SpriteSlime.slimeRunLeft,
+            idleRight: SpriteGoblin.goblinStaticoRight,
+            runRight: SpriteGoblin.goblinRunRight,
+            idleLeft: SpriteGoblin.goblinStaticoLeft,
+            runLeft: SpriteGoblin.goblinRunLeft,
           ),
         ) {
     setupCollision(
@@ -34,9 +30,9 @@ class Slime extends SimpleEnemy with ObjectCollision, AutomaticRandomMovement {
     seeAndMoveToPlayer(closePlayer: (player) {}, radiusVision: 100);
 
     // Atacar o player
-    simpleAttackMelee(damage: 10, size: size);
+    simpleAttackMelee(damage: 20, size: size);
 
-    runRandomMovement(dt, speed: 50,maxDistance: 300);
+    runRandomMovement(dt, speed: 50, maxDistance: 300);
     super.update(dt);
   }
 

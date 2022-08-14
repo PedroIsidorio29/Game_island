@@ -2,7 +2,7 @@ import 'dart:ui';
 import 'sprite_jogador.dart';
 import 'package:bonfire/bonfire.dart';
 
-class Jogador extends SimplePlayer with ObjectCollision {
+class Jogador extends SimplePlayer with ObjectCollision,Lighting {
   Jogador(Vector2 position)
       : super(
             life: 150,
@@ -20,6 +20,14 @@ class Jogador extends SimplePlayer with ObjectCollision {
         collisions: [
           CollisionArea.rectangle(size: Vector2(14, 14)),
         ],
+      ),
+    );
+
+      setupLighting(
+      LightingConfig(
+        radius: width * 1.5,
+        color:Color.fromARGB(59, 255, 255, 255),
+        blurBorder: 30,
       ),
     );
   }
