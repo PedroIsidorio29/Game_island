@@ -36,8 +36,12 @@ class Jogador extends SimplePlayer with ObjectCollision, Lighting {
     );
   }
 
-  addForca(val) {
+  addForca(double val) {
     forca = forca + val;
+  }
+
+  addPontuacao(int val) {
+    pontuacao = pontuacao + val;
   }
 
   // Ação ao bater no inimigo
@@ -64,8 +68,8 @@ class Jogador extends SimplePlayer with ObjectCollision, Lighting {
       canvas,
       height: 2,
       borderWidth: 2,
-      align:const Offset(0, 0),
-      borderColor:const Color.fromARGB(170, 0, 0, 0),
+      align: const Offset(0, 0),
+      borderColor: const Color.fromARGB(170, 0, 0, 0),
     );
     super.render(canvas);
   }
