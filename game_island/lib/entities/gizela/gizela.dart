@@ -51,7 +51,7 @@ class Gizela extends SimpleNpc with ObjectCollision {
                         text: [
                           const TextSpan(
                               text:
-                                  'Na verdade eu estava indo pra casa, acabei me perdendo e '),
+                                  'Na verdade, eu estava indo para casa, acabei me perdendo e...'),
                         ],
                         person: SpriteJogador.playerStaticoRight.asWidget(),
                         personSayDirection: PersonSayDirection.LEFT),
@@ -62,7 +62,7 @@ class Gizela extends SimpleNpc with ObjectCollision {
                         text: [
                           const TextSpan(
                               text:
-                                  'Por favor, não diga mais nada é exatamente de um guerreiro como você que estavamos precisando'),
+                                  'Por favor, não diga mais nada é exatamente de um guerreiro como você que estávamos precisando.'),
                         ],
                         person: SpriteGizela.gizelaStaticLeft.asWidget(),
                         personSayDirection: PersonSayDirection.RIGHT),
@@ -71,7 +71,7 @@ class Gizela extends SimpleNpc with ObjectCollision {
                             style: TextStyle(
                                 color: Color.fromARGB(255, 255, 255, 255))),
                         text: [
-                          const TextSpan(text: 'Mas moça eu tenho que '),
+                          const TextSpan(text: 'Mas moça tenho que ir embora.'),
                         ],
                         person: SpriteJogador.playerStaticoRight.asWidget(),
                         personSayDirection: PersonSayDirection.LEFT),
@@ -82,7 +82,7 @@ class Gizela extends SimpleNpc with ObjectCollision {
                         text: [
                           const TextSpan(
                               text:
-                                  'SHIIIII... Vá e lute, lute com a sua vida'),
+                                  'SHIIIII... Vá e lute, lute com a sua vida.'),
                         ],
                         person: SpriteGizela.gizelaStaticLeft.asWidget(),
                         personSayDirection: PersonSayDirection.RIGHT),
@@ -93,7 +93,7 @@ class Gizela extends SimpleNpc with ObjectCollision {
                         text: [
                           const TextSpan(
                               text:
-                                  'A e antes que eu me esqueça, existem diversos itens espalhados por ai.'),
+                                  'A e antes que eu me esqueça, existem diversos itens espalhados por aí.'),
                         ],
                         person: SpriteGizela.gizelaStaticLeft.asWidget(),
                         personSayDirection: PersonSayDirection.RIGHT),
@@ -104,7 +104,7 @@ class Gizela extends SimpleNpc with ObjectCollision {
                         text: [
                           const TextSpan(
                               text:
-                                  'As poções em sí são bem especiais, existem as azuis que te deixam mais forte, e as vermelhas que almentam sua vitalidade, se der sorte pode até mesmo encontrar as roxas que te deixam ridiculamente poderoso, mas se eu fosse você tomaria cuidado com as verdes.'),
+                                  'As poções em si são bem especiais, existem as azuis que te deixam mais forte, e as vermelhas que aumentam sua vitalidade, se der sorte pode até mesmo encontrar as roxas que te deixaram ridiculamente poderoso, mas se eu fosse você tomaria cuidado com as verdes.'),
                         ],
                         person: SpriteGizela.gizelaStaticLeft.asWidget(),
                         personSayDirection: PersonSayDirection.RIGHT),
