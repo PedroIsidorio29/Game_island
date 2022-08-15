@@ -14,8 +14,8 @@ class Coin extends GameDecoration with Sensor {
   @override
   void onContact(GameComponent component) {
        if (component is Jogador) {
-      component.addPontuacao(5);
       removeFromParent();
+      component.addPontuacao(5);
     }
   }
 }

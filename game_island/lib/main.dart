@@ -40,8 +40,7 @@ class GameInit extends StatelessWidget {
   const GameInit({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-Jogador player = Jogador(Vector2(3 * size, 4 * size));
-    var screenSize = MediaQuery.of(context).size;
+    Jogador player = Jogador(Vector2(3 * size, 4 * size));
     return BonfireTiledWidget(
       map: TiledWorldMap(
         "map/map.json",
@@ -78,9 +77,9 @@ Jogador player = Jogador(Vector2(3 * size, 4 * size));
             JoystickAction(
               actionId: 1,
               color: const Color.fromARGB(255, 106, 170, 255),
-              margin: EdgeInsets.only(
-                bottom: screenSize.height * 0.1,
-                right: screenSize.width * 0.1,
+              margin:const EdgeInsets.only(
+                bottom: 30,
+                right: 20,
               ),
             )
           ]),

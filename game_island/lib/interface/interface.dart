@@ -1,4 +1,4 @@
-// ignore_for_file: use_key_in_widget_constructors, avoid_unnecessary_containers
+// ignore_for_file: use_key_in_widget_constructors, avoid_unnecessary_containers, avoid_print
 import 'package:flutter/material.dart';
 import 'dart:async';
 
@@ -21,6 +21,7 @@ class _InterfaceState extends State<Interface> {
   void initState() {
     _timer = Timer.periodic(const Duration(milliseconds: 200), (timer) {
       if (coins != widget.player.pontuacao) {
+        print('init');
         setState(() {
           coins = widget.player.pontuacao;
         });
