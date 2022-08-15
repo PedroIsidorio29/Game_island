@@ -6,6 +6,7 @@ import 'package:bonfire/bonfire.dart';
 
 class Jogador extends SimplePlayer with ObjectCollision, Lighting {
   double forca = 10;
+  int pontuacao = 0;
   Jogador(Vector2 position)
       : super(
             life: 150,

@@ -9,6 +9,7 @@ import 'entities/goblin/goblin.dart';
 import 'entities/player/jogador.dart';
 import 'package:bonfire/bonfire.dart';
 import 'package:flutter/material.dart';
+import 'package:game_island/interface/interface.dart';
 import 'package:game_island/entities/gizela/gizela.dart';
 import 'package:game_island/controller/goblin_controller.dart';
 import 'package:game_island/controller/slime_controller.dart';
@@ -37,9 +38,9 @@ class MyGame extends StatelessWidget {
 
 class GameInit extends StatelessWidget {
   const GameInit({Key? key}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
+Jogador player = Jogador(Vector2(3 * size, 4 * size));
     var screenSize = MediaQuery.of(context).size;
     return BonfireTiledWidget(
       map: TiledWorldMap(
@@ -56,7 +57,11 @@ class GameInit extends StatelessWidget {
           'coin': (properties) => Coin(properties.position),
         },
       ),
-      player: Jogador(Vector2(3 * size, 4 * size)),
+      player: player,
+      overlayBuilderMap: {
+        Interface.overKey: (context, game) => Interface(player: player)
+      },
+      initialActiveOverlays: const [Interface.overKey],
       lightingColorGame: const Color.fromARGB(69, 0, 0, 0),
       cameraConfig: CameraConfig(
           // moveOnlyMapArea: true,
