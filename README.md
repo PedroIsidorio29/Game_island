@@ -14,3 +14,6 @@ COMO RODAR:
  - Execute o comando: "cd .\game_island"
  - Execute o comando: "flutter run"
  - E selecione onde deseja executar a aplicação
+
+APK:
+ - link com o apk `https://mega.nz/file/7RlyGYxZ#qQQCWjSVdeIgt25X_UmQs02EVqAgsbYJPN1nipkQNl8`
