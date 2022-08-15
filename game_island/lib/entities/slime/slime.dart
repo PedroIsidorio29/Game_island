@@ -3,10 +3,15 @@
 import 'dart:ui';
 
 import 'package:bonfire/bonfire.dart';
+import 'package:game_island/controller/slime_controller.dart';
 import 'package:game_island/entities/sprite_atack.dart';
 import 'sprite_slime.dart';
 
-class Slime extends SimpleEnemy with ObjectCollision, AutomaticRandomMovement {
+class Slime extends SimpleEnemy
+    with
+        ObjectCollision,
+        AutomaticRandomMovement,
+        UseStateController<SlimeRespawController> {
   Slime(Vector2 position)
       : super(
           life: 100,
@@ -32,7 +37,7 @@ class Slime extends SimpleEnemy with ObjectCollision, AutomaticRandomMovement {
   @override
   void update(double dt) {
     // Seguir o player
-    seeAndMoveToPlayer(closePlayer: (player) {}, radiusVision: 100);
+    seeAndMoveToPlayer(closePlayer: (player) {
 
     // Atacar o player
     simpleAttackMelee(
@@ -43,6 +48,9 @@ class Slime extends SimpleEnemy with ObjectCollision, AutomaticRandomMovement {
       animationRight: SpriteAtack.right,
       animationUp: SpriteAtack.top,
     );
+
+    }, radiusVision: 100);
+
 
     runRandomMovement(dt, speed: 50, maxDistance: 200);
     super.update(dt);
@@ -65,6 +73,7 @@ class Slime extends SimpleEnemy with ObjectCollision, AutomaticRandomMovement {
   @override
   void die() {
     removeFromParent();
+    controller.respawn();
     super.die();
   }
 }

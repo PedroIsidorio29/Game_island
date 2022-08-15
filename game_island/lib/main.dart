@@ -1,19 +1,21 @@
-import 'package:game_island/entities/gizela/gizela.dart';
-
-import 'entities/goblin/goblin.dart';
+import 'itens/coin.dart';
+import 'itens/fogueira.dart';
+import 'itens/max_potion.dart';
+import 'itens/life_potion.dart';
+import 'itens/poison_potion.dart';
 import 'entities/slime/slime.dart';
+import 'itens/strength_potion.dart';
+import 'entities/goblin/goblin.dart';
 import 'entities/player/jogador.dart';
 import 'package:bonfire/bonfire.dart';
 import 'package:flutter/material.dart';
-
-import 'itens/coin.dart';
-import 'itens/fogueira.dart';
-import 'itens/life_potion.dart';
-import 'itens/max_potion.dart';
-import 'itens/poison_potion.dart';
-import 'itens/strength_potion.dart';
+import 'package:game_island/entities/gizela/gizela.dart';
+import 'package:game_island/controller/goblin_controller.dart';
+import 'package:game_island/controller/slime_controller.dart';
 
 void main() {
+  BonfireInjector.instance.put((i) => GoblinRespawController());
+  BonfireInjector.instance.put((i) => SlimeRespawController());
   runApp(const MyGame());
 }
 
