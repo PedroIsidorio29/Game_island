@@ -1,6 +1,7 @@
 import 'dart:ui';
 import 'package:bonfire/bonfire.dart';
 import 'package:game_island/entities/goblin/sprite_goblin.dart';
+import 'package:game_island/entities/sprite_atack.dart';
 
 class Goblin extends SimpleEnemy with ObjectCollision, AutomaticRandomMovement {
   Goblin(Vector2 position)
@@ -8,6 +9,7 @@ class Goblin extends SimpleEnemy with ObjectCollision, AutomaticRandomMovement {
           life: 200,
           position: position,
           size: Vector2(14, 14),
+          speed: 100,
           animation: SimpleDirectionAnimation(
             idleRight: SpriteGoblin.goblinStaticoRight,
             runRight: SpriteGoblin.goblinRunRight,
@@ -30,7 +32,14 @@ class Goblin extends SimpleEnemy with ObjectCollision, AutomaticRandomMovement {
     seeAndMoveToPlayer(closePlayer: (player) {}, radiusVision: 100);
 
     // Atacar o player
-    simpleAttackMelee(damage: 20, size: size);
+    simpleAttackMelee(
+      damage: 20,
+      size: size,
+      animationDown: SpriteAtack.bottom,
+      animationLeft: SpriteAtack.left,
+      animationRight: SpriteAtack.right,
+      animationUp: SpriteAtack.top,
+    );
 
     runRandomMovement(dt, speed: 50, maxDistance: 200);
     super.update(dt);

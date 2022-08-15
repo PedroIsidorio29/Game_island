@@ -64,6 +64,8 @@ flutter:
    - assets/images/enemy/goblin/
    - assets/images/enemy/slime/
    - assets/images/npc/
+   - assets/images/itens/
+   - assets/images/efects/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

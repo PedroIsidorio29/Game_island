@@ -1,8 +1,11 @@
 import 'dart:ui';
+import 'package:game_island/entities/sprite_atack.dart';
+
 import 'sprite_jogador.dart';
 import 'package:bonfire/bonfire.dart';
 
-class Jogador extends SimplePlayer with ObjectCollision,Lighting {
+class Jogador extends SimplePlayer with ObjectCollision, Lighting {
+  double forca = 10;
   Jogador(Vector2 position)
       : super(
             life: 150,
@@ -23,20 +26,32 @@ class Jogador extends SimplePlayer with ObjectCollision,Lighting {
       ),
     );
 
-      setupLighting(
+    setupLighting(
       LightingConfig(
         radius: width * 1.5,
-        color:Color.fromARGB(59, 255, 255, 255),
+        color: const Color.fromARGB(59, 255, 255, 255),
         blurBorder: 30,
       ),
     );
+  }
+
+  addForca(val) {
+    forca = forca + val;
   }
 
   // Ação ao bater no inimigo
   @override
   void joystickAction(JoystickActionEvent event) {
     if (event.event == ActionEvent.DOWN && event.id == 1) {
-      simpleAttackMelee(damage: 20, size: size, sizePush: 14);
+      simpleAttackMelee(
+        damage: forca,
+        size: size,
+        sizePush: 14,
+        animationDown: SpriteAtack.bottom,
+        animationLeft: SpriteAtack.left,
+        animationRight: SpriteAtack.right,
+        animationUp: SpriteAtack.top,
+      );
     }
     super.joystickAction(event);
   }
@@ -48,8 +63,8 @@ class Jogador extends SimplePlayer with ObjectCollision,Lighting {
       canvas,
       height: 2,
       borderWidth: 2,
-      align: Offset(0, 0),
-      borderColor: Color.fromARGB(170, 0, 0, 0),
+      align:const Offset(0, 0),
+      borderColor:const Color.fromARGB(170, 0, 0, 0),
     );
     super.render(canvas);
   }

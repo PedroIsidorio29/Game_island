@@ -86,7 +86,29 @@ class Gizela extends SimpleNpc with ObjectCollision {
                         ],
                         person: SpriteGizela.gizelaStaticLeft.asWidget(),
                         personSayDirection: PersonSayDirection.RIGHT),
-                            Say(
+                    Say(
+                        header: const Text('Gizelda',
+                            style: TextStyle(
+                                color: Color.fromARGB(255, 255, 255, 255))),
+                        text: [
+                          const TextSpan(
+                              text:
+                                  'A e antes que eu me esqueça, existem diversos itens espalhados por ai.'),
+                        ],
+                        person: SpriteGizela.gizelaStaticLeft.asWidget(),
+                        personSayDirection: PersonSayDirection.RIGHT),
+                    Say(
+                        header: const Text('Gizelda',
+                            style: TextStyle(
+                                color: Color.fromARGB(255, 255, 255, 255))),
+                        text: [
+                          const TextSpan(
+                              text:
+                                  'As poções em sí são bem especiais, existem as azuis que te deixam mais forte, e as vermelhas que almentam sua vitalidade, se der sorte pode até mesmo encontrar as roxas que te deixam ridiculamente poderoso, mas se eu fosse você tomaria cuidado com as verdes.'),
+                        ],
+                        person: SpriteGizela.gizelaStaticLeft.asWidget(),
+                        personSayDirection: PersonSayDirection.RIGHT),
+                    Say(
                         header: const Text('Guerreiro',
                             style: TextStyle(
                                 color: Color.fromARGB(255, 255, 255, 255))),

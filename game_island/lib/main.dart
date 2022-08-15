@@ -6,7 +6,12 @@ import 'entities/player/jogador.dart';
 import 'package:bonfire/bonfire.dart';
 import 'package:flutter/material.dart';
 
+import 'itens/coin.dart';
 import 'itens/fogueira.dart';
+import 'itens/life_potion.dart';
+import 'itens/max_potion.dart';
+import 'itens/poison_potion.dart';
+import 'itens/strength_potion.dart';
 
 void main() {
   runApp(const MyGame());
@@ -35,8 +40,6 @@ class GameInit extends StatelessWidget {
   Widget build(BuildContext context) {
     var screenSize = MediaQuery.of(context).size;
     return BonfireTiledWidget(
-
-
       map: TiledWorldMap(
         "map/map.json",
         objectsBuilder: {
@@ -44,21 +47,20 @@ class GameInit extends StatelessWidget {
           'goblin': (properties) => Goblin(properties.position),
           'gizela': (properties) => Gizela(properties.position),
           'fogueira': (properties) => Fogueira(properties.position),
-          
+          'max': (properties) => MaxPotion(properties.position),
+          'veneno': (properties) => PoisonPotion(properties.position),
+          'vida': (properties) => LifePotion(properties.position),
+          'forca': (properties) => StrengthPotion(properties.position),
+          'coin': (properties) => Coin(properties.position),
         },
       ),
-
-
       player: Jogador(Vector2(3 * size, 4 * size)),
-
-lightingColorGame:Color.fromARGB(69, 0, 0, 0),
+      lightingColorGame: const Color.fromARGB(69, 0, 0, 0),
       cameraConfig: CameraConfig(
-          moveOnlyMapArea: true,
-          zoom: 1,
-          smoothCameraEnabled: true,
+          // moveOnlyMapArea: true,
+          zoom: 2,
+          // smoothCameraEnabled: true,
           sizeMovementWindow: Vector2(size * 3, size * 3)),
-
-
       joystick: Joystick(
           directional: JoystickDirectional(),
           keyboardConfig: KeyboardConfig(
@@ -66,14 +68,13 @@ lightingColorGame:Color.fromARGB(69, 0, 0, 0),
           actions: [
             JoystickAction(
               actionId: 1,
-              color:const Color.fromARGB(255, 235, 118, 118),
+              color: const Color.fromARGB(255, 235, 118, 118),
               margin: EdgeInsets.only(
                 bottom: screenSize.height * 0.1,
                 right: screenSize.width * 0.1,
               ),
             )
           ]),
-
     );
   }
 }
